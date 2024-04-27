@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "3.101.0"
     }
   }
@@ -9,4 +9,14 @@ terraform {
 
 provider "azurerm" {
   # Configuration options
+  features {
+
+  }
+
 }
+
+resource "azurerm_resource_group" "devRG" {
+  name     = "Sales-Dev-RG"
+  location = "West Europe"
+}
+
